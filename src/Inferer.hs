@@ -69,15 +69,15 @@ runNG ng = runState (runExceptT ng) 0
 
 -- infers an expression
 infer :: Exp -> String
-infer exp = do
-    let (res, _) = runNG (extractType exp)
+infer expr = do
+    let (res, _) = runNG (extractType expr)
     case res of
         Left err -> err
         Right t  -> show (generalize [] t)
     where
         extractType :: Exp -> NameGenerator Type
-        extractType exp = do
-            (s, t) <- inferCtx [] exp
+        extractType expression = do
+            (s, t) <- inferCtx [] expression
             pure (substitute s t)
 
 -- infers an expression, given a context

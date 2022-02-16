@@ -49,3 +49,13 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - ti-project
+
+ghc-options:
+- -Werror                   # warnings are errors
+- -Wincomplete-patterns     # cover all cases!
+- -Wunused-binds            # use all your bindings
+- -Wunused-matches          # use all your pattern matches!
+- -Wmissing-signatures      # write all your toplevel signatures!
+- -Wname-shadowing          # use different names!
+- -Wincomplete-uni-patterns # warn about incomplete patterns v2
+- -Wall

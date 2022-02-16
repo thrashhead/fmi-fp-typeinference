@@ -6,7 +6,7 @@ differ :: Eq a => [a] -> [a] -> [a]
 --     | x `elem` from = differ (removeAll x from) xs
 --     | otherwise = differ from xs
 
-differ [] that = []
+differ [] _ = []
 differ (x:xs) list
     | x `elem` list = differ xs list
     | otherwise = x : differ xs list
@@ -22,7 +22,7 @@ joinDistinctLeft (x:xs) y
     | otherwise = x : joinDistinctLeft xs y
 
 findMaybe :: Eq a => a -> [(a, b)] -> Maybe b
-findMaybe x [] = Nothing
+findMaybe _ [] = Nothing
 findMaybe x ((k, v):rest) 
     | x == k = Just v
     | otherwise = findMaybe x rest
