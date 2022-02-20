@@ -1,0 +1,9 @@
+move test stuff to test dependencies
+
+you weren't using HMock, delete it
+
+property tests!
+
+use a formatter
+
+you can chain hspec specs with a define, you don't need to use <>
